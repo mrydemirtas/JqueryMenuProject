@@ -1,0 +1,29 @@
+﻿[
+  {
+    "id": 1,
+    "menuName": "Anasayfa",
+    "url": "anasayfa.html",
+    "subMenu": [ ]
+
+  },
+  {
+    "id": 2,
+    "menuName": "Hakkımızda",
+    "url": "about.html",
+    "subMenu": [
+      {
+        "id": 3,
+        "menuName": "Misyon",
+        "url": "misyon.html",
+        "subMenu": [ ]
+      },
+      {
+        "id": 4,
+        "menuName": "Vizyon",
+        "url": "vizyon.html",
+        "subMenu": [ ]
+      }
+    ]
+  }
+
+]

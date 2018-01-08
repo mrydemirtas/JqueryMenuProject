@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+
+    <div class="navbar">
+        
+    </div>
+
+    <div id="subMenu-container">
+
+    </div>
+
+    <script>
+
+
+        $(document).ready(function () {
+
+            $.getJSON("https://api.myjson.com/bins/12cowp", function (data) {
+                $.each(data, function (index,item) {
+                    $(".navbar").append("<a onmouseout='HideSubMenu("+item.id+")' onmouseover='ShowSubMenu(" + item.id + ")' style='padding:5px;' href=" + item.url + ">" + item.menuName + "</a>");
+
+                    if (item.subMenu.length > 0) {
+                        $("#subMenu-container").append("<ul style='display:none;list-style:none;' id='subMenu_" + item.id + "'></ul>");
+
+                        $.each(item.subMenu, function (subIndex, subItem) {
+                            $("#subMenu_" + item.id ).append("<li><a href="+subItem.url+">"+subItem.menuName+"</a></li>")
+                       })
+                    }
+                })
+            })
+        })
+
+
+        function ShowSubMenu(id) {
+            $("#subMenu_" + id).fadeIn("slow");
+        }
+
+        function HideSubMenu(id) {
+            $("#subMenu_" + id).fadeOut("slow");
+        }
+
+
+    </script>
+
+</body>
+</html>
